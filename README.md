@@ -143,7 +143,7 @@ The repository includes **5 reusable SQL scripts** outside of views that:
 
 Explore the interactive Tableau dashboard:
 
-🔗 [View Dashboard on Tableau Public](https://public.tableau.com/app/profile/YOUR_USERNAME/viz/YOUR_DASHBOARD_NAME)
+🔗 [View Dashboard on Tableau Public](https://public.tableau.com/app/profile/juan.correa./viz/AceSuperstoreTask2/AceSuperstoreAnalysis)
 
 
 ---
