@@ -139,7 +139,12 @@ The repository includes **5 reusable SQL scripts** outside of views that:
 
 <img width="810" height="476" alt="image" src="https://github.com/user-attachments/assets/d679f7b3-e873-4190-a5ff-5f101b9edb29" />
 
-🔗 **View Dashboard on Tableau Public**
+## 🌐 View Dashboard on Tableau Public
+
+You can explore the interactive Tableau dashboard published on Tableau Public:
+
+🔗 [View Dashboard on Tableau Public](https://public.tableau.com/app/profile/your-username/viz/your-dashboard-name)
+
 
 ---
 
