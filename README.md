@@ -1,58 +1,95 @@
 # 📊 Ace Superstore Data Warehouse Project
 
-This project delivers a complete data warehouse pipeline for **Ace Superstore**, using a **star schema** implemented in **Microsoft SQL Server** and visualized with **Tableau**.
+A complete retail data warehousing project for **Ace Superstore**, implemented using **Microsoft SQL Server** and visualized via **Tableau**. The pipeline transforms transactional data into a dimensional model for analytical reporting.
 
 ---
 
-## 📁 Contents
+## 📁 Table of Contents
 
 - [⭐ Star Schema Overview](#-star-schema-overview)
 - [📂 Table Purpose & Description](#-table-purpose--description)
-- [🛠️ Tool Stack & Workflow](#-tool-stack--workflow)
-- [🗃️ SQL Server Setup Instructions](#-sql-server-setup-instructions)
-- [📊 Tableau Connection & Visualisation](#-tableau-connection--visualisation)
+- [🔧 Tools Used](#-tools-used)
+- [🛠️ Folder Structure](#-folder-structure)
+- [🧱 SQL Table Creation](#-sql-table-creation)
+- [📥 Data Insertion](#-data-insertion)
+- [🔍 Views & Queries](#-views--queries)
+- [📊 Tableau Visualisation](#-tableau-visualisation)
 - [🖼️ Screenshots](#-screenshots)
-- [📁 Repository Structure](#-repository-structure)
 
 ---
 
 ## ⭐ Star Schema Overview
 
-The schema uses a classic **star model** centred around a `fact_sales` table supported by three-dimensional tables.
+This warehouse uses a classic **star schema**, composed of:
 
-📌 **Schema Diagram**  
-![Ace Superstore Schema](./schema/AceSuperstore.Schema.pdf)
+- 1 central fact table: `fact_sales`
+- 3 dimensions: `dim_customer`, `dim_product`, and `dim_date`
+
+📌 **Schema Diagram**:  
+📄 [AceSuperstore.Schema.pdf](./AceSuperstore.Schema.pdf)
 
 ---
 
 ## 📂 Table Purpose & Description
 
-| Table Name     | Type      | Description                                                       |
-|----------------|-----------|-------------------------------------------------------------------|
-| `fact_sales`   | Fact      | Central table storing transactional sales data                    |
-| `dim_date`     | Dimension | Enables filtering by day, month, quarter, and year                |
-| `dim_customer` | Dimension | Provides location-based segmentation (region, city, postal code)  |
-| `dim_product`  | Dimension | Contains product metadata: name, category, sub-category           |
+| Table         | Type      | Description                                                    |
+|---------------|-----------|----------------------------------------------------------------|
+| `fact_sales`  | Fact      | Captures transactional-level sales, cost, discount, margin     |
+| `dim_date`    | Dimension | Enables time-based slicing: year, quarter, month, day          |
+| `dim_customer`| Dimension | Stores customer location attributes                            |
+| `dim_product` | Dimension | Contains category-level product metadata                        |
 
-> ✅ Views used in Tableau:  
-> `vw_full_sales_details`, `vw_region_sales_performance`, `vw_discount_impact`, `vw_sales_summary`
-
----
-
-## 🛠️ Tool Stack & Workflow
-
-| Tool             | Purpose                                   |
-|------------------|-------------------------------------------|
-| Microsoft SQL Server (SSMS) | Schema definition, data loading, views      |
-| Excel / CSV Files | Source for dimension and fact data       |
-| Tableau Desktop   | Dashboard development                    |
-| Tableau Public    | Online publishing                        |
+📌 Views Used:
+- `vw_full_sales_details`
+- `vw_discount_impact`
+- `vw_region_sales_performance`
+- `vw_sales_summary`
+- Others: see [`sql/`](./sql)
 
 ---
 
-## 🗃️ SQL Server Setup Instructions
+## 🔧 Tools Used
 
-### Step 1: Create Tables
+| Tool            | Purpose                                             |
+|-----------------|-----------------------------------------------------|
+| **SQL Server**  | Schema creation, transformation, view/query logic   |
+| **Tableau**     | Dashboarding, interactive storytelling              |
+| **Excel/CSV**   | Source dataset loaded into staging using import wizard |
+| **GitHub**      | Version control and project repository              |
+
+---
+
+## 🛠️ Folder Structure
+
+AceSuperstore-DW/
+├── sql/
+│ ├── create_tables.sql
+│ ├── insert_datetable.sql
+│ ├── insert_customertable.sql
+│ ├── insert_product.table.sql
+│ ├── insert_fact_sales.table.sql
+│ ├── full_sales_details_view.sql
+│ ├── discount_impact_view.sql
+│ ├── category_profit_margin_view.sql
+│ ├── regionwise_sales_performance_view.sql
+│ ├── top10_products_by_revenue_view.sql
+│ ├── queries.sql
+├── tableau/
+│ ├── AceSuperstoreDashboard.twbx
+│ ├── screenshots/
+│ ├── schema_diagram.pdf
+
+sql
+Copy
+Edit
+
+---
+
+## 🧱 SQL Table Creation
+
+See [`create_tables.sql`](./sql/create_tables.sql)
+
+Example:
 
 ```sql
 CREATE TABLE dim_product (
@@ -62,136 +99,105 @@ CREATE TABLE dim_product (
   category VARCHAR(255),
   sub_category VARCHAR(255)
 );
--- Repeat for dim_customer, dim_date, fact_sales
-```
+📥 Data Insertion
+All .csv files were imported using SQL Server Import Wizard into a staging table: dbo.AceSuperstore.
 
-See: `sql/create_tables.sql`
+Then, dedicated SQL scripts populated the dimension and fact tables.
 
----
-
-### Step 2: Populate Dimensions
-
-```sql
-INSERT INTO dim_product (product_id, product_name, plain_category, category, sub_category)
-VALUES ('P001', 'Adjustable Dumbbells', 'Fitness', 'Weights', 'Strength');
-```
-
-CSV files were cleaned and imported using SQL Server’s import wizard. See: `sql/populate_dimensions.sql`
-
----
-
-### Step 3: Populate Fact Table
-
-```sql
-INSERT INTO fact_sales (
-  order_id, order_date, order_mode, customer_id, product_id, quantity, discount,
-  final_sales_per_unit, total_sales_discount_included, total_sales_discount_not_included,
-  final_cost, total_revenue, profit_per_unit, margin_percent
+Example: dim_customer (see insert_customertable.sql)
+sql
+Copy
+Edit
+WITH RankedCustomers AS (
+  SELECT *,
+    ROW_NUMBER() OVER (PARTITION BY Customer_ID ORDER BY Customer_ID) AS rn
+  FROM dbo.AceSuperstore
 )
-VALUES (
-  'O001', '2024-01-15', 'Online', 'C001', 'P001', 2, 0.15, 45.0,
-  76.5, 90.0, 58.0, 121.0, 31.5, 26.0
-);
-```
+INSERT INTO dim_customer (customer_id, city, postal_code, country, region)
+SELECT Customer_ID, City, Postal_Code, Country, Region
+FROM RankedCustomers WHERE rn = 1;
+Example: fact_sales (see insert_fact_sales.table.sql)
+sql
+Copy
+Edit
+INSERT INTO fact_sales (...)
+SELECT 
+    Order_ID, CAST(Order_Date AS DATE), Order_Mode, Customer_ID, Product_ID,
+    TRY_CAST(Sales AS FLOAT), TRY_CAST(Cost_Price AS FLOAT),
+    TRY_CAST(Quantity AS INT), TRY_CAST(REPLACE(Discount, '%', '') AS FLOAT),
+    ...
+FROM dbo.AceSuperstore
+WHERE Order_ID IS NOT NULL;
+🔍 Views & Queries
+Views are stored in:
 
-See: `sql/populate_fact_table.sql`
+full_sales_details_view.sql
 
----
+discount_impact_view.sql
 
-### Step 4: Create Views
+regionwise_sales_performance_view.sql
 
-```sql
-CREATE VIEW vw_full_sales_details AS
-SELECT fs.*, dc.*, dp.*, dd.*
-FROM fact_sales fs
-JOIN dim_customer dc ON fs.customer_id = dc.customer_id
-JOIN dim_product dp ON fs.product_id = dp.product_id
-JOIN dim_date dd ON fs.order_date = dd.order_date;
-```
+SalesSummary_view.sql
 
-See: `sql/create_views.sql`
+top10_products_by_revenue_view.sql
 
----
+Query files:
 
-### Step 5: Run Sample Queries
+sales_by_category_query.sql
 
-```sql
-SELECT TOP 5 city, SUM(total_revenue) AS revenue
-FROM vw_full_sales_details
-GROUP BY city
-ORDER BY revenue DESC;
-```
+top10_most_profitable_products_query.sql
 
-See: `sql/queries.sql`
+monthly_sales_trend_by_region_query.sql
 
----
+etc.
 
-## 📊 Tableau Connection & Visualisation
+📊 Tableau Visualisation
+Launch Tableau Desktop
 
-### ✅ Steps
+Connect to SQL Server
 
-1. Open **Tableau Desktop**
-2. Connect to your SQL Server database
-3. Import each view (`vw_...`) as a data source
-4. Build the following sheets:
-   - Revenue over time by region
-   - Product-level YoY sales
-   - Category-level cost vs sales
-   - Top-N cities (controlled by parameter)
-   - Discount vs full-price analysis
-5. Combine sheets into **dashboards**
-6. Create 4 **storyboards** with captions
+Add views as data sources
 
-🔗 **Tableau Public Dashboard**  
-[View Online →](https://public.tableau.com/app/profile/juan.correa./viz/AceSuperstoreTask2/AceSuperstoreAnalysis#1)
+Create sheets:
 
----
+Revenue Over Time
 
-## 🖼️ Screenshots
+Sales by Product YoY
 
-### 📘 Story 1: Regional Revenue
+Cost vs Sales by Category
 
-> Total revenue peaked in 2024, dropped in 2025 (partial data). Monthly fluctuations reveal regional seasonality.
+Top Cities
 
-### 📙 Story 2: Product YoY Sales
+Discount vs Full Price
 
-> Year-over-year trends by product with category filtering enabled.
+Combine into Dashboards
 
-### 📕 Story 3: Category Cost vs Sales
+Create Stories
 
-> A two-panel bar chart contrasting revenue vs incurred costs per category.
+🔗 Published version:
+Tableau Public – Ace Superstore Analysis
 
-### 📗 Story 4: City Ranking + Discount
+🖼️ Screenshots
+📍 Screenshots of each dashboard/story will go here.
 
-> Parameter controls the top N cities shown. Below is a discount vs full-price sales/margin comparison.
+Story 1: Regional Revenue Trend
 
----
+Story 2: Product-Level YoY Sales
 
-## 📁 Repository Structure
+Story 3: Category Cost vs Sales
 
-```plaintext
-AceSuperstore-DataWarehouse/
-├── sql/
-│   ├── create_tables.sql
-│   ├── populate_dimensions.sql
-│   ├── populate_fact_table.sql
-│   ├── create_views.sql
-│   └── queries.sql
-│
-├── tableau/
-│   ├── AceSuperstore_Dashboard.twb
-│   └── screenshots/
-│       ├── story1.png
-│       ├── story2.png
-│       ├── story3.png
-│       └── story4.png
-│
-├── schema/
-│   └── AceSuperstore.Schema.pdf
-│
-└── README.md
-```
+Story 4: Top Cities + Discount Analysis
 
+📁 Folder: /tableau/screenshots
+
+✅ Project Completion Checklist
+Task	Status
+Star Schema Model	✅ Done
+SQL Tables & Inserts	✅ Done
+View Creation & Queries	✅ Done
+Tableau Integration	✅ Done
+Dashboard Stories	✅ Done
+Screenshots Added	⬜ (Pending)
 ---
 
 ## ✅ Deliverables Summary
