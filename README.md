@@ -79,32 +79,9 @@ For each dimension:
 
 This ensures **dimension integrity** and reliable joins with the fact table.
 
-> Example (Customer Dimension):
-
-```sql
-WITH RankedCustomers AS (
-    SELECT 
-        [Customer_ID], [City], [Postal_Code], [Country], [Region],
-        ROW_NUMBER() OVER (PARTITION BY [Customer_ID] ORDER BY [Customer_ID]) AS rn
-    FROM dbo.AceSuperstore
-    WHERE [Customer_ID] IS NOT NULL
-)
-INSERT INTO dim_customer (customer_id, city, postal_code, country, region)
-SELECT [Customer_ID], [City], [Postal_Code], [Country], [Region]
-FROM RankedCustomers
-WHERE rn = 1;
-```
-
 ### ✅ Fact Table Population
 
 The fact table was populated with clean transactional records from the staging table:
-
-```sql
-INSERT INTO fact_sales (...)
-SELECT ..., TRY_CAST(...), REPLACE(...), ...
-FROM dbo.AceSuperstore
-WHERE [Order_ID] IS NOT NULL;
-```
 
 All relevant insert scripts are included in the `/sql/` folder.
 
