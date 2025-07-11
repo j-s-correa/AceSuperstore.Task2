@@ -48,7 +48,7 @@ The project follows a **star schema** structure comprising:
 
 This schema allows for slicing and filtering across multiple business dimensions efficiently.
 
-📄 Reference: `AceSuperstore.Schema.pdf`
+📄 ## Reference: [AceSuperstore.Schema.pdf](https://github.com/user-attachments/files/21191314/AceSuperstore.Schema.pdf)
 
 ---
 
