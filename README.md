@@ -103,9 +103,11 @@ The `fact_sales` table was populated with cleaned transactional records from the
 
 Multiple **SQL views** and **queries** were created to support Tableau integration. These included:
 
-- Revenue aggregation by region and time  
-- Discounted vs full-price sales comparison  
-- Top-N insights by city, product, and customer  
+- 📍 **Revenue Aggregation by Region and Time**  
+- 🎯 **Sales Performance: Discounted vs Full-Price Orders**  
+- 🥇 **Top 10 Most Profitable Product Categories**  
+- 📈 **Monthly Profitability by Discount Tier**  
+- 🏙️ **Top-N Analysis by City, Product, and Customer Segments**
 
 <img width="392" height="270" alt="image" src="https://github.com/user-attachments/assets/aaa617e8-ae6a-47d8-894c-7dfa1a3516fc" />  
 <img width="746" height="696" alt="image" src="https://github.com/user-attachments/assets/472b877b-e02e-439c-835b-683f161d096f" />  
@@ -118,10 +120,10 @@ The repository includes **5 reusable SQL scripts** outside of views that:
 - Join the fact and dimension tables  
 - Return strategic business KPIs  
 
-📁 View the queries and views in the `/sql/` folder.
 <img width="772" height="724" alt="image" src="https://github.com/user-attachments/assets/7ca69b7e-45e7-47ac-a4bf-4e073691b40c" />
 <img width="773" height="716" alt="image" src="https://github.com/user-attachments/assets/ee5394d4-7ce6-4e74-9e49-431a12c3c950" />
 
+📁 ## View the queries and views in the `/sql/` folder.
 
 ---
 
