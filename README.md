@@ -4,27 +4,12 @@ This project implements a dimensional model for **Ace Superstore** using **Micro
 
 ---
 
-RDAMP-Dimensional-Model-Tableau/
-├── sql/
-│   ├── create_tables.sql              # DDL to define schema
-│   ├── populate_dimensions.sql        # Insert data into dimension tables
-│   ├── populate_fact_table.sql        # Insert data into fact_sales
-│   ├── create_views.sql               # Reusable analytical views
-│   └── queries.sql                    # Business insight queries
-├── tableau/
-│   ├── AceSuperstore_Dashboard.twb    # Tableau workbook
-│   ├── extracts/
-│   │   └── AceSuperstore_Extract.hyper
-│   └── screenshots/
-│       └── tableau_dashboard_preview.png
-└── README.md
-    ├── 🛠 Tools Used
-    ├── 🌟 Dimensional Schema Overview
-    ├── 📌 Table Design & Purpose
-    ├── 🏗 Table Creation & Data Population
-    ├── 🔎 View & Query Creation
-    ├── 📊 Tableau Visualisation Pipeline
-    └── 🖼️ Dashboard Screenshots
+## 📁 Project Structure
+
+The repository is organized into logical components for SQL development and Tableau visualization. The `README.md` is structured to mirror the key stages of the data pipeline and model design.
+
+<img width="443" height="371" alt="image" src="https://github.com/user-attachments/assets/b866b0ae-a8ed-489c-8b54-6fe886428096" />
+
 
 ## 📚 Contents
 
