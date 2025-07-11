@@ -137,14 +137,3 @@ A parameter was used to measure the Top N Cities as well.
 See the full interactive story on Tableau Public:
 
 <img width="1011" height="487" alt="image" src="https://github.com/user-attachments/assets/61033932-4a96-47f2-b771-238722beb880" />
-
-
----
-
-
-```
-
----
-
-Please refer to this `README.md` as a complete documentation of the warehouse design, SQL setup, data flow, and dashboarding process.
-
