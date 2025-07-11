@@ -173,6 +173,14 @@ Key insights captured from the dashboard:
 <img width="857" height="738" alt="image" src="https://github.com/user-attachments/assets/bf1c79b4-7103-4d1d-ae24-864954503c4c" />
 
 
-[Juan.Correa.AceSuperstore.zip](https://github.com/user-attachments/files/21191446/Juan.Correa.AceSuperstore.zip)
+---
+
+### 📦 Download Complete Project Files (.rar)
+
+All files for this project — including SQL scripts, Tableau workbook, screenshots, and documentation — are available in a single compressed archive:
+
+🔗 [Download RDAMP_Project_Files.zip][JuanCorrea.Insights.Files.zip](https://github.com/user-attachments/files/21191465/JuanCorrea.Insights.Files.zip)
+
+
 
 
