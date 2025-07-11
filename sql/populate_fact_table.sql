@@ -2,6 +2,7 @@
 -- POPULATE FACT TABLE FOR SALES DATA WAREHOUSE
 -- File: populate_fact_table.sql
 -- Platform: SQL Server Management Studio 21
+-- Author: Juan Correa
 -- ==========================================================================================
 
 -- 🧭 Purpose:
