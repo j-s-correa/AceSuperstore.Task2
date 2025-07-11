@@ -6,13 +6,13 @@ This project implements a dimensional model for **Ace Superstore** using **Micro
 
 ## 📚 Contents
 
-- 🛠 Tools Used  
-- 🌟 Dimensional Schema Overview  
-- 📌 Table Design & Purpose  
-- 🏗 Table Creation & Data Population  
-- 🔎 View & Query Creation  
-- 📊 Tableau Visualisation Pipeline  
-- 🖼️ Dashboard Screenshots  
+- [🛠 Tools Used](#-tools-used)  
+- [🌟 Dimensional Schema Overview](#-dimensional-schema-overview)  
+- [📌 Table Design & Purpose](#-table-design--purpose)  
+- [🏗 Table Creation & Data Population](#-table-creation--data-population)  
+- [🔎 View & Query Creation](#-view--query-creation)  
+- [📊 Tableau Visualisation Pipeline](#-tableau-visualisation-pipeline)  
+- [🖼️ Dashboard Screenshots](#-dashboard-screenshots)
 
 ---
 
@@ -115,10 +115,13 @@ Multiple **SQL views** and **queries** were created to support Tableau integrati
 
 The repository includes **5 reusable SQL scripts** outside of views that:
 
-- Join fact and dimension tables  
+- Join the fact and dimension tables  
 - Return strategic business KPIs  
 
-📁 View the queries in the `/sql/` folder.
+📁 View the queries and views in the `/sql/` folder.
+<img width="772" height="724" alt="image" src="https://github.com/user-attachments/assets/7ca69b7e-45e7-47ac-a4bf-4e073691b40c" />
+<img width="773" height="716" alt="image" src="https://github.com/user-attachments/assets/ee5394d4-7ce6-4e74-9e49-431a12c3c950" />
+
 
 ---
 
