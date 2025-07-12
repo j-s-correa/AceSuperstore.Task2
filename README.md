@@ -57,15 +57,27 @@ This schema allows for slicing and filtering across multiple business dimensions
 
 📄 Reference: [AceSuperstore.Schema.pdf](https://github.com/user-attachments/files/21191314/AceSuperstore.Schema.pdf)
 
+
 ---
 
 ## 🏗 Table Creation & Data Population
 
 The process began with the creation of the database in SQL Server Management Studio (SSMS). The raw **.csv** dataset was first cleaned manually in Excel using functions like VLOOKUP, aggregation formulas, and checks for empty or inconsistent cells.
 
-**Cleaned .csv**: [Juan.Correa.AceSuperstore.csv](https://github.com/user-attachments/files/21195368/Juan.Correa.AceSuperstore.csv)
+### 🔧 Data Cleaning Summary
 
-After cleaning, I imported the .csv into a staging table in SQL Server. This temporary table allowed me to perform additional validation and transformations within SQL, such as using CAST for data type compatibility and ensuring the structure matched the final dimensional model.
+- Negative values in the **Sales** column were corrected using absolute values.
+- Negative values in the **Cost Price** column were cleaned to ensure accurate calculations.
+- Empty cells in the **Discount** column were replaced with `0`. While NULL values could be used, this step was not strictly necessary for the analysis.
+
+<img width="1143" height="610" alt="image" src="https://github.com/user-attachments/assets/a855ddb9-4b71-499a-8b56-dec9398abc15" />
+<img width="955" height="645" alt="image" src="https://github.com/user-attachments/assets/7bd125a4-d8e9-47af-a8f5-f1c45bff67ac" />
+
+**Cleaned .csv**: [Juan.CorreaAceSuperstore.FullyCleaned.csv](https://github.com/user-attachments/files/21197289/Juan.CorreaAceSuperstore.FullyCleaned.csv)
+
+The process was carried out using the dataset initially flagged for **negative values** in the **`Cost`** and **`Sales`** columns, but for this analysis, I proceeded with a **not fully cleaned version**.
+
+After cleaning, I imported the `.csv` into a **staging table** in **SQL Server**. This temporary table allowed me to perform additional **validation and transformations** within SQL, such as using the `CAST` function for **data type compatibility** and ensuring the structure matched the final **dimensional model**.
 
 From the **staging table**, I populated the fact and dimension tables, carefully handling duplicates (e.g., repeated customer IDs) to avoid redundant entries, especially in products and customers. This step ensured that only clean, properly typed, and deduplicated data flowed into the final schema.
 
@@ -187,7 +199,8 @@ Key insights captured from the dashboard:
 
 All files for this project — including SQL scripts, Tableau workbook, screenshots, and documentation — are available in a single compressed archive:
 
-🔽 [Download RDAMP Project Files (.zip)](https://github.com/user-attachments/files/21195406/JuanCorrea.Ace.Insights.zip)
+🔽 [Download RDAMP Project Files (.zip)] [JuanCorrea.Ace.Insights.zip](https://github.com/user-attachments/files/21197343/JuanCorrea.Ace.Insights.zip)
+
 
 
 
