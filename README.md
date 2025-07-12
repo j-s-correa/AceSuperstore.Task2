@@ -75,7 +75,7 @@ The process began with the creation of the database in SQL Server Management Stu
 
 **Cleaned .csv**: [Juan.CorreaAceSuperstore.FullyCleaned.csv](https://github.com/user-attachments/files/21197289/Juan.CorreaAceSuperstore.FullyCleaned.csv)
 
-The process was carried out using the dataset initially flagged for **negative values** in the **`Cost`** and **`Sales`** columns, but for this analysis, I proceeded with a **not fully cleaned version**.
+The process was carried out using the dataset initially flagged for some **negative values** in the **`Cost`** and **`Sales`** columns, but for this analysis, I proceeded with a **not fully cleaned version**.
 
 After cleaning, I imported the `.csv` into a **staging table** in **SQL Server**. This temporary table allowed me to perform additional **validation and transformations** within SQL, such as using the `CAST` function for **data type compatibility** and ensuring the structure matched the final **dimensional model**.
 
@@ -191,6 +191,22 @@ Key insights captured from the dashboard:
 <img width="963" height="740" alt="image" src="https://github.com/user-attachments/assets/e2dfe9c9-55dc-4708-82f8-46ea92636b31" />
 <img width="857" height="738" alt="image" src="https://github.com/user-attachments/assets/bf1c79b4-7103-4d1d-ae24-864954503c4c" />
 <img width="832" height="734" alt="image" src="https://github.com/user-attachments/assets/ba8ddab6-79ce-4a18-9b2f-8c8d336fedcd" />
+
+#### Top N & Bottom N Revenue Analysis
+
+This subsection presents visual comparisons of the **Top and Bottom Cities and Products by Total Revenue**, including cases where **margins or revenues are negative**. Some visuals use an in-house parameter to dynamically filter Top N results for deeper insight.
+
+Included screenshots:
+- Bottom and top orders by revenue, displayed with associated **category** and **region**.
+- Highest-performing **products**, spotlighting strong contributors.
+- Lowest-performing **orders**, capturing underperforming or loss-generating transactions.
+
+This was **built** to clearly **show negative outcomes** from certain orders, making potential losses visibly apparent and easier to analyse. These dashboards help surface key geographic and product-based revenue patterns to support targeted business decisions.
+
+
+<img width="971" height="817" alt="image" src="https://github.com/user-attachments/assets/4126d3de-d2fa-4df1-93f7-d9238d6fdd4b" />
+<img width="907" height="345" alt="image" src="https://github.com/user-attachments/assets/e2c3a4ee-8aae-469a-9f11-6e2e4557f279" />
+<img width="887" height="712" alt="image" src="https://github.com/user-attachments/assets/d3ac2af2-8fe1-49bd-8ac1-4060ff5a915f" />
 
 
 ---
