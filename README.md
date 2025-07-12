@@ -108,7 +108,7 @@ This step preserves **dimension integrity** and ensures reliable foreign key joi
 
 The `fact_sales` table was populated with cleaned transactional records from the staging table.
 
-## 📂 All insert scripts are stored in the `/sql/` directory.
+## 📂 All insert scripts are stored in the [`/sql/`](https://github.com/j-s-correa/AceSuperstore.Task2/tree/main/sql) directory.
 
 ---
 
@@ -136,7 +136,8 @@ The repository includes **5 reusable SQL scripts** outside of views that:
 <img width="772" height="724" alt="image" src="https://github.com/user-attachments/assets/7ca69b7e-45e7-47ac-a4bf-4e073691b40c" />
 <img width="773" height="716" alt="image" src="https://github.com/user-attachments/assets/ee5394d4-7ce6-4e74-9e49-431a12c3c950" />
 
-## 📁 View the queries and views in the `/sql/` folder.
+## 📁 View the queries and views in the [`/sql/`](https://github.com/j-s-correa/AceSuperstore.Task2/tree/main/sql) folder.
+
 
 ---
 
@@ -158,7 +159,6 @@ Explore the interactive Tableau dashboard:
 
 🔗 [View Dashboard on Tableau Public](https://public.tableau.com/app/profile/juan.correa./viz/AceSuperstoreTask2/AceSuperstoreAnalysis)
 
-
 ---
 
 ## 🖼️ Dashboard Screenshots
@@ -177,7 +177,6 @@ Key insights captured from the dashboard:
 <img width="879" height="724" alt="image" src="https://github.com/user-attachments/assets/3fbc2750-1509-44e3-b7d5-0335d218970a" />
 <img width="963" height="740" alt="image" src="https://github.com/user-attachments/assets/e2dfe9c9-55dc-4708-82f8-46ea92636b31" />
 <img width="857" height="738" alt="image" src="https://github.com/user-attachments/assets/bf1c79b4-7103-4d1d-ae24-864954503c4c" />
-
 
 ---
 
