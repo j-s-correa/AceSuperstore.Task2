@@ -6,7 +6,7 @@ This project implements a dimensional model for **Ace Superstore** using **Micro
 
 ## 📁 Project Structure
 
-The repository is organized into logical components for SQL development and Tableau visualization. The `README.md` is structured to mirror the key stages of the data pipeline and model design.
+The repository is organised into logical components for SQL development and Tableau visualisation. The `README.md` is structured to mirror the key stages of the data pipeline and model design.
 
 <img width="443" height="371" alt="image" src="https://github.com/user-attachments/assets/b866b0ae-a8ed-489c-8b54-6fe886428096" />
 
@@ -61,7 +61,11 @@ This schema allows for slicing and filtering across multiple business dimensions
 
 ## 🏗 Table Creation & Data Population
 
-The process began with the creation of the database in SSMS. The raw `.csv` dataset was uploaded as a **staging table** to support cleaning and transformation before final loading into dimensional and fact tables.
+The process began with the creation of the database in SQL Server Management Studio (SSMS). The raw .csv dataset was first cleaned manually in Excel using functions like VLOOKUP, aggregation formulas, and checks for empty or inconsistent cells.
+
+After cleaning, I imported the .csv into a staging table in SQL Server. This temporary table allowed me to perform additional validation and transformations within SQL, such as using CAST for data type compatibility and ensuring the structure matched the final dimensional model.
+
+From the staging table, I populated the fact and dimension tables, carefully handling duplicates (e.g., repeated customer IDs) to avoid redundant entries, especially in products and customers. This step ensured that only clean, properly typed, and deduplicated data flowed into the final schema.
 
 <img width="940" height="662" alt="image" src="https://github.com/user-attachments/assets/9710a1bd-0c71-4bf5-b688-ceceebb51153" />  
 <img width="940" height="639" alt="image" src="https://github.com/user-attachments/assets/3c237fff-42e4-4b9f-98d0-be7f849e4901" />  
@@ -80,7 +84,7 @@ All base tables were created using **SQL DDL scripts** within SSMS. The schema d
 
 ### ✅ Data Loading
 
-The raw dataset was imported into a staging table using SQL Server’s built-in **Import Wizard**. This enabled:
+The cleaned .csv dataset was imported into a staging table using SQL Server’s built-in **Import and Export Wizard**. This feature allows easy transfer of data from external files into the database, enabling further transformation and validation before loading into the final dimensional model.
 
 - **Data cleaning** before final load  
 - **Type casting** (e.g., converting string to numeric types)  
@@ -130,7 +134,7 @@ The repository includes **5 reusable SQL scripts** outside of views that:
 <img width="772" height="724" alt="image" src="https://github.com/user-attachments/assets/7ca69b7e-45e7-47ac-a4bf-4e073691b40c" />
 <img width="773" height="716" alt="image" src="https://github.com/user-attachments/assets/ee5394d4-7ce6-4e74-9e49-431a12c3c950" />
 
-📁 ## View the queries and views in the `/sql/` folder.
+📁 ** View the queries and views in the `/sql/` folder.
 
 ---
 
