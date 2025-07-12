@@ -170,6 +170,7 @@ Key insights captured from the dashboard:
 - 💰 Cost vs Sales analysis  
 - 📈 Year-over-Year comparisons (Revenue, Discount, Margin, Total Sales)  
 - 🎯 Top-N analysis using parameter controls (e.g., Top Cities)
+- 📍 Heatmap - Product Seasonality Trends YoY
 
 <img width="274" height="166" alt="image" src="https://github.com/user-attachments/assets/d2f5288f-f1c6-42b6-a17a-95df372897f0" />  
 <img width="280" height="572" alt="image" src="https://github.com/user-attachments/assets/b57b0526-1b26-4ca5-9536-89204467c1c8" />  
@@ -177,6 +178,8 @@ Key insights captured from the dashboard:
 <img width="879" height="724" alt="image" src="https://github.com/user-attachments/assets/3fbc2750-1509-44e3-b7d5-0335d218970a" />
 <img width="963" height="740" alt="image" src="https://github.com/user-attachments/assets/e2dfe9c9-55dc-4708-82f8-46ea92636b31" />
 <img width="857" height="738" alt="image" src="https://github.com/user-attachments/assets/bf1c79b4-7103-4d1d-ae24-864954503c4c" />
+<img width="832" height="734" alt="image" src="https://github.com/user-attachments/assets/ba8ddab6-79ce-4a18-9b2f-8c8d336fedcd" />
+
 
 ---
 
