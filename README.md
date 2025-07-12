@@ -205,7 +205,7 @@ This was **built** to clearly **show negative outcomes** from certain orders, ma
 
 
 <img width="971" height="817" alt="image" src="https://github.com/user-attachments/assets/4126d3de-d2fa-4df1-93f7-d9238d6fdd4b" />
-<img width="890" height="713" alt="image" src="https://github.com/user-attachments/assets/d3d13045-5111-4a55-a71f-32739dabe1bc" />
+<img width="896" height="718" alt="image" src="https://github.com/user-attachments/assets/5f422594-ee1a-480d-a384-44e7b2ca4c79" />
 
 > 📊 A **dashboard** with this insightful information has been **added** to the original Tableau project, now fully updated with the **cleaned and corrected dataset**.  
 > 🔗 **Explore the full interactive dashboard here:**  
