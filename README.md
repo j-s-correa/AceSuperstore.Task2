@@ -61,11 +61,14 @@ This schema allows for slicing and filtering across multiple business dimensions
 
 ## 🏗 Table Creation & Data Population
 
-The process began with the creation of the database in SQL Server Management Studio (SSMS). The raw .csv dataset was first cleaned manually in Excel using functions like VLOOKUP, aggregation formulas, and checks for empty or inconsistent cells.
+The process began with the creation of the database in SQL Server Management Studio (SSMS). The raw **.csv** dataset was first cleaned manually in Excel using functions like VLOOKUP, aggregation formulas, and checks for empty or inconsistent cells.
+
+**Cleaned .csv**: [Ace Superstore.csv](https://github.com/user-attachments/files/21195360/Ace.Superstore.csv)
+
 
 After cleaning, I imported the .csv into a staging table in SQL Server. This temporary table allowed me to perform additional validation and transformations within SQL, such as using CAST for data type compatibility and ensuring the structure matched the final dimensional model.
 
-From the staging table, I populated the fact and dimension tables, carefully handling duplicates (e.g., repeated customer IDs) to avoid redundant entries, especially in products and customers. This step ensured that only clean, properly typed, and deduplicated data flowed into the final schema.
+From the **staging table**, I populated the fact and dimension tables, carefully handling duplicates (e.g., repeated customer IDs) to avoid redundant entries, especially in products and customers. This step ensured that only clean, properly typed, and deduplicated data flowed into the final schema.
 
 <img width="940" height="662" alt="image" src="https://github.com/user-attachments/assets/9710a1bd-0c71-4bf5-b688-ceceebb51153" />  
 <img width="940" height="639" alt="image" src="https://github.com/user-attachments/assets/3c237fff-42e4-4b9f-98d0-be7f849e4901" />  
