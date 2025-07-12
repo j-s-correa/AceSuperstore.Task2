@@ -63,8 +63,7 @@ This schema allows for slicing and filtering across multiple business dimensions
 
 The process began with the creation of the database in SQL Server Management Studio (SSMS). The raw **.csv** dataset was first cleaned manually in Excel using functions like VLOOKUP, aggregation formulas, and checks for empty or inconsistent cells.
 
-**Cleaned .csv**: [Ace Superstore.csv](https://github.com/user-attachments/files/21195360/Ace.Superstore.csv)
-
+**Cleaned .csv**: [Juan.Correa.AceSuperstore.csv](https://github.com/user-attachments/files/21195368/Juan.Correa.AceSuperstore.csv)
 
 After cleaning, I imported the .csv into a staging table in SQL Server. This temporary table allowed me to perform additional validation and transformations within SQL, such as using CAST for data type compatibility and ensuring the structure matched the final dimensional model.
 
@@ -109,7 +108,7 @@ This step preserves **dimension integrity** and ensures reliable foreign key joi
 
 The `fact_sales` table was populated with cleaned transactional records from the staging table.
 
-📂 All insert scripts are stored in the `/sql/` directory.
+## 📂 All insert scripts are stored in the `/sql/` directory.
 
 ---
 
@@ -137,7 +136,7 @@ The repository includes **5 reusable SQL scripts** outside of views that:
 <img width="772" height="724" alt="image" src="https://github.com/user-attachments/assets/7ca69b7e-45e7-47ac-a4bf-4e073691b40c" />
 <img width="773" height="716" alt="image" src="https://github.com/user-attachments/assets/ee5394d4-7ce6-4e74-9e49-431a12c3c950" />
 
-📁 ** View the queries and views in the `/sql/` folder.
+## 📁 View the queries and views in the `/sql/` folder.
 
 ---
 
