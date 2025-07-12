@@ -205,7 +205,8 @@ This was **built** to clearly **show negative outcomes** from certain orders, ma
 
 
 <img width="971" height="817" alt="image" src="https://github.com/user-attachments/assets/4126d3de-d2fa-4df1-93f7-d9238d6fdd4b" />
-<img width="887" height="712" alt="image" src="https://github.com/user-attachments/assets/d3ac2af2-8fe1-49bd-8ac1-4060ff5a915f" />
+<img width="891" height="689" alt="image" src="https://github.com/user-attachments/assets/858a7550-b882-48d1-9c15-fd9571cabd98" />
+
 
 
 ---
