@@ -192,22 +192,20 @@ Key insights captured from the dashboard:
 <img width="857" height="738" alt="image" src="https://github.com/user-attachments/assets/bf1c79b4-7103-4d1d-ae24-864954503c4c" />
 <img width="832" height="734" alt="image" src="https://github.com/user-attachments/assets/ba8ddab6-79ce-4a18-9b2f-8c8d336fedcd" />
 
-### 📊 Sales by Products YoY  
+### Sales by Products YoY  
 
 This project shows **sales trends for different products across three years**:  
 - **2023 (Blue)**  
 - **2024 (Orange)**  
 - **2025 (Red – first 3 months only)**  
 
----
-
-### 🔍 Key Insights  
+### Key Insights  
 - **2024 was the peak year** for most products.  
 - **2025 appears lower** because it includes only Q1 data.  
 - **Portable Solar Generators and Refrigerators stayed strong**, while Electric Bikes and Digital Cameras grew sharply in 2024.  
 
-### 🖼 Chart Preview  
-![Sales by Products YoY]<img width="918" height="760" alt="image" src="https://github.com/user-attachments/assets/dbc9383f-f81d-4add-ba9f-eab1451422b8" />
+### Chart Preview  
+<img width="918" height="760" alt="image" src="https://github.com/user-attachments/assets/dbc9383f-f81d-4add-ba9f-eab1451422b8" />
 
 
 #### Top N & Bottom N Revenue Analysis
